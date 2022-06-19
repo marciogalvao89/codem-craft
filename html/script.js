@@ -296,7 +296,7 @@ $('.weaponspanminute').text(weaponMinute);
 });
 $(document).on('click', '.startButton', function () {
   console.log(xpweapon)
-   $.post("https://codem-craft/sendItem", JSON.stringify({
+   $.post(`https://${GetParentResourceName()}/sendItem`, JSON.stringify({
   weaponName :weaponName, weaponMinute:weaponMinute , weaponLabel:weaponLabel,itemName : gerekliitemler,imagesbig:imagesbig ,xpweapon:xpweapon
   }));
 });
@@ -314,7 +314,7 @@ $(document).on('click', '.awaitingButton', function () {
   $('.text3').fadeOut(250);
   $('.yuzdeilerleme').fadeIn(250);
   $('#progressbar').css('display','block');
-  $.post("https://codem-craft/getAwating", JSON.stringify({}), {})
+  $.post(`https://${GetParentResourceName()}/getAwating`, JSON.stringify({}), {})
   $('.weaponcraftitemback').attr('src','./images/craftline.png');   
 });
 $(document).on('click', '.backpage', function () {
@@ -383,14 +383,14 @@ $(document).on('click', '.weaponlist2', function () {
     }   
 });
 $(document).on('click', '.claimButton', function () {
-    $.post("https://codem-craft/claimitem", JSON.stringify({
+    $.post(`https://${GetParentResourceName()}/claimitem`, JSON.stringify({
       claimitem :claimitem , claimid:claimid
    }));
 });
 $(document).keydown(function (e) {
   if (e.keyCode == 27) {
     $('.container').css('display', 'none');
-    $.post('https://codem-craft/escape');
+    $.post(`https://${GetParentResourceName()}/escape`);
   }
 });
 

@@ -1,7 +1,7 @@
 Config = {}
 
 
-Config.frameworkObject = "infinity" -- newqb, oldqb, esx, infinity
+Config.frameworkObject = "newqb" -- newqb, oldqb, esx, infinity
 Config.Mysql = "oxmysql" -- mysql-async -- oxmysql
 Config.SetCraftXpCommand = 'setxp' -- example = setxp id xp  = setxp 2 5
 Config.AdminPerm = 'admin' --- admin rank
@@ -82,13 +82,13 @@ end
 
 Config.Notifications = { -- Notifications
     ["success"] = {
-        message = 'İtem craft başlatıldı.',
+        message = 'Item Craftado',
         type = "succes",
         time = 2500,
     },
   
     ["error"] = {
-        message = 'İtem yok.',
+        message = 'Não conseguiste Craftar.',
         type = "error",
         time = 2500,
     },
