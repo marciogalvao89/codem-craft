@@ -38,4 +38,8 @@ server_scripts {
 	'GetFrameworkObject.lua',
 }
 
+escrow_ignore {
+    'server/*.lua',
+}
+
 lua54 'yes'
