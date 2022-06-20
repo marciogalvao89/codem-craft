@@ -6,7 +6,10 @@ Config.Mysql = "oxmysql" -- mysql-async -- oxmysql
 Config.SetCraftXpCommand = 'setxp' -- example = setxp id xp  = setxp 2 5
 Config.AdminPerm = 'admin' --- admin rank
 Config.Craft = {
-    {npcHash = 's_m_m_ammucountry' ,coords = vector3(244.89, -802.82, 30.29) , npcHeading = 83.91}
+    {npcHash = 's_m_m_ammucountry' ,coords = vector3(244.89, -802.82, 30.29) , npcHeading = 83.91},
+    {npcHash = 's_m_m_ammucountry' ,coords = vector3(1574.89, 3561.82, 35.22) , npcHeading = 28.91},
+    {npcHash = 's_m_m_ammucountry' ,coords = vector3(-447.89, 5995.82, 31.34) , npcHeading = 79.91}
+
 }
 
 

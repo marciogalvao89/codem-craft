@@ -52,7 +52,15 @@ Citizen.CreateThread(function()
                 },
                 distance = 2.0
             })
-		 
+		
+		 local blip = AddBlipForCoord(v.coords.x, v.coords.y, v.coords.z)
+				SetBlipSprite(blip, 566)
+				SetBlipColour(blip, 2)
+	            SetBlipScale(blip, 0.6)
+				SetBlipAsShortRange(blip, true)
+				BeginTextCommandSetBlipName("STRING")
+				AddTextComponentString("Craft")
+				EndTextCommandSetBlipName(blip)
    end
 
 end)

@@ -143,7 +143,6 @@ Citizen.CreateThread(function()
 			
 			local craftxp = xPlayer.PlayerData.metadata["craftxp"]
 			if craftxp == nil then craftxp = 0 end
-			print(craftxp)
             cb(craftxp, time)
         end)
 
