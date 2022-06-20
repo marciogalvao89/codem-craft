@@ -112,7 +112,6 @@ AddEventHandler('codem-craft:addItem', function(a, b)
 
 		local item = ExecuteSql("SELECT * FROM codem_craft WHERE id = '" .. b .. "'")
         if item[1] then
-			tPrint(item)
 			xPlayer.Functions.AddItem(item[1].weaponname, 1)
 			ExecuteSql("DELETE FROM `codem_craft` WHERE `id` = '" .. b .. "'")
 			TriggerClientEvent('codem-craft:refreshPageAwating', src)
