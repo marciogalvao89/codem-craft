@@ -6,7 +6,7 @@ Config.Mysql = "oxmysql" -- mysql-async -- oxmysql
 Config.SetCraftXpCommand = 'setxp' -- example = setxp id xp  = setxp 2 5
 Config.AdminPerm = 'admin' --- admin rank
 Config.Craft = {
-    {npcHash = 's_m_m_ammucountry' ,coords = vector3(2306.89, 4881.82, 41.8082) , npcHeading = 31.91}
+    {npcHash = 's_m_m_ammucountry' ,coords = vector3(244.89, -802.82, 30.29) , npcHeading = 83.91}
 }
 
 
@@ -16,50 +16,27 @@ Config.Categories = {
         name = "weapon",
         label = "Weapon",
     },
-    {
-        name = "ammo",
-        label = "Ammo",
-    },
-    {
-        name = "tools",
-        label = "Tools",
-    },
-  
+      
 }
 
 Config.CraftItem = {
     {
-        itemName = 'weapon_assaultrifle_mk2',
-        itemLabel = 'Assault Rifle',
+        itemName = 'weapon_revolver',
+        itemLabel = 'Revolver',
         minute = 20 ,
         level = 0,
         xp = 100,
         category = 'weapon',
         required = {
-            { label = 'Scrab', name = "tosti", amount = 10},
-            { label = 'Aluminum', name = "tosti", amount =10},
-            { label = 'Iron', name = "tosti", amount =10},
+            { label = 'Metalscrap', name = "metalscrap", amount = 10},
+            { label = 'Copper', name = "copper", amount =10},
+            { label = 'Aluminum', name = "aluminum", amount =10},
             
         },
         imagesname = 'Assault-Rifle-MK-II-Big' ,  ---- for mid image
    
     },
-    {
-        itemName = 'rifle_ammo',
-        itemLabel = 'Rifle Ammo',
-        minute = 10 ,
-        level = 0,
-        xp = 100,
-        category = 'ammo',
-        required = {
-        
-            { label = 'Aluminum', name = "tosti", amount =10},
-            { label = 'Iron', name = "tosti", amount =10},
-        },
-        imagesname = 'rifle_ammo' ,  ---- for mid image
-      
-    },
-   
+       
  
 }
 

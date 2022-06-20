@@ -95,7 +95,7 @@ window.addEventListener("message", function (event) {
      
       playerinv = item.playerinventory;
       framework = item.framework;
-      console.log(playerxp)
+      console.log(item)
       if (playerxp < 1000) {
         playerlvl = 0;
         $('.playerxplvl').text('0');
@@ -205,12 +205,12 @@ const incomingData = (configdata) => {
   let text = "";
   for (i = 0; i < configdata.length; i++) {
     text += `
-        <div class="weaponlist" data-itemname = ${configdata[i].itemLabel} data-required = ${JSON.stringify(configdata[i].required)} data-weaponName = ${configdata[i].itemName} data-weaponTime = ${configdata[i].minute} data-itemlevel = ${configdata[i].level}  data-bigimage = ${configdata[i].imagesname} data-xp = ${configdata[i].xp}  >
+        <div class="weaponlist" data-itemname = ${configdata[i].itemLabel} data-required = ${JSON.stringify(configdata[i].required)} data-weaponName = ${configdata[i].itemName} data-weaponTime = ${configdata[i].minute} data-itemlevel = ${configdata[i].level}  data-bigimage = ${configdata[i].itemName} data-xp = ${configdata[i].xp}  >
         <h2 class="weaponame">${configdata[i].itemLabel}</h2>
         <h2 class="weapontime">${configdata[i].minute} SECONDS</h2>
         <h2 class="weaponlvl">${configdata[i].level} LVL </h2>
         <div class="weaponbackground"></div>
-        <div class="weaponMargin" style="background-image:url(./itemimages/${configdata[i].imagesname}.png)"> 
+        <div class="weaponMargin" style="background-image:url(https://futurerp.org/items/${configdata[i].itemName}.png)"> 
        
         </div>
        
@@ -225,13 +225,13 @@ const categoryData = (configdata) => {
   for (i = 0; i < configdata.length; i++) {
     if (categoryType == configdata[i].category){
       text += `
-      <div class="weaponlist" data-itemname = ${configdata[i].itemLabel} data-required = ${JSON.stringify(configdata[i].required)} data-weaponName = ${configdata[i].itemName} data-weaponTime = ${configdata[i].minute} data-itemlevel = ${configdata[i].level}  data-bigimage = ${configdata[i].imagesname}  data-xp = ${configdata[i].xp}  >
+      <div class="weaponlist" data-itemname = ${configdata[i].itemLabel} data-required = ${JSON.stringify(configdata[i].required)} data-weaponName = ${configdata[i].itemName} data-weaponTime = ${configdata[i].minute} data-itemlevel = ${configdata[i].level}  data-bigimage = ${configdata[i].itemName}  data-xp = ${configdata[i].xp}  >
       <h2 class="weaponame">${configdata[i].itemLabel}</h2>
       <h2 class="weapontime">${configdata[i].minute} SECONDS</h2>
       <h2 class="weaponlvl">${configdata[i].level} LVL </h2>
       <div class="weaponbackground"></div>
    
-      <div class="weaponMargin" style="background-image:url(./itemimages/${configdata[i].imagesname}.png)"> 
+      <div class="weaponMargin" style="background-image:url(https://futurerp.org/items/${configdata[i].itemName}.png)"> 
      
       </div>
      
@@ -264,7 +264,7 @@ $(document).on('click', '.weaponlist', function () {
   let required2 = JSON.parse(required);
   $('.weaponbackground').removeClass('weaponbackgroundhover');
   $(this).find('.weaponbackground').addClass('weaponbackgroundhover');
-  $('.showweapons').attr("src","./itemimages/"+imagesbig+".png");   
+  $('.showweapons').attr("src","https://futurerp.org/items/"+imagesbig+".png");   
   let text2 = "";
 $('.weaponname').text(weaponLabel);
 $('.weaponspanname').text(weaponLabel);
@@ -275,7 +275,7 @@ $('.weaponspanminute').text(weaponMinute);
     if (GetAmountDataByName(required2[i].name)){
     text2 += `
         <div class="items">
-        <img class="gerekliItempng" src="./itemimages/${required2[i].name}.png" alt="">
+        <img class="gerekliItempng" src="https://futurerp.org/items/${required2[i].name}.png" alt="">
         <h2>${required2[i].label}</h2>
         <h3>${required2[i].amount}/ <span>${GetAmountDataByName2(required2[i].name)} </span> </h3>
          </div>
@@ -284,7 +284,7 @@ $('.weaponspanminute').text(weaponMinute);
   }else{
     text2 += `
     <div class="items">
-    <img class="gerekliItempng" src="./images/water.png" alt="">
+    <img class="gerekliItempng" src="https://futurerp.org/items/x.png" alt="">
     <h2>${required2[i].label}</h2>
     <h3>${required2[i].amount}/0</h3>
      </div>
@@ -339,10 +339,10 @@ const sqlgelendata = (configdata) => {
   if (configdata){
   for (i = 0; i < configdata.length; i++) {
       text += `
-      <div class="weaponlist2" data-itemname = ${configdata[i].weaponlabel} data-claimitem = ${configdata[i].weaponname} data-id =${configdata[i].id}  data-sqlzaman =${configdata[i].itemtime} data-itemzaman = ${configdata[i].weapontime}  data-weaponimage =${configdata[i].images} >
+      <div class="weaponlist2" data-itemname = ${configdata[i].weaponlabel} data-claimitem = ${configdata[i].weaponname} data-id =${configdata[i].id}  data-sqlzaman =${configdata[i].itemtime} data-itemzaman = ${configdata[i].weapontime}  data-weaponimage =${configdata[i].weaponname} >
       <h2 class="weaponame2">${configdata[i].weaponlabel}</h2>
       <div class="weaponbackground2"></div>
-      <div class="weaponMargin2" style="background-image:url(./itemimages/${configdata[i].images}.png)"> 
+      <div class="weaponMargin2" style="background-image:url(https://futurerp.org/items/${configdata[i].weaponname}.png)"> 
      
       </div>
     
@@ -365,7 +365,7 @@ $(document).on('click', '.weaponlist2', function () {
   $(this).find('.weaponbackground2').addClass('weaponbackgroundhover2');
   let sqldengelenzaman = $(this).attr('data-sqlzaman');
   let itemzaman = $(this).attr('data-itemzaman');
-  $('.showweapons').attr("src","./itemimages/"+images+".png");   
+  $('.showweapons').attr("src","https://futurerp.org/items/"+images+".png");   
   if(servertime - sqldengelenzaman >= itemzaman) {
     $(".ply-weight-prog").css("width",100+"%");
     $(".yuzdeilerleme").text("%"+100);
