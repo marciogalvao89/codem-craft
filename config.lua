@@ -39,7 +39,22 @@ Config.CraftItem = {
         imagesname = 'Assault-Rifle-MK-II-Big' ,  ---- for mid image
    
     },
-       
+    {
+        itemName = 'weapon_molotov',
+        itemLabel = 'Molotov',
+        minute = 20 ,
+        level = 0,
+        xp = 100,
+        category = 'weapon',
+        required = {
+            { label = 'Combustivel', name = "jerry_can", amount = 1},
+            { label = 'Vidro', name = "glass", amount =1},
+            
+        },
+        imagesname = 'Assault-Rifle-MK-II-Big' ,  ---- for mid image
+   
+    },
+        
  
 }
 
